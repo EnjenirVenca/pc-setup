@@ -37,6 +37,14 @@
           "type": "git"
         },
         {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#100e23",
+          "background": "#906cff",
+          "template": "  {{ .Full }} "
+        },
+        {
           "background": "#0095e9",
           "background_templates": [
             "{{ if gt .Code 0 }}#ff0044{{ end }}"
