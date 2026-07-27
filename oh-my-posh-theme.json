@@ -5,27 +5,38 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#AE81FF",
+          "background": "#FDE725",
           "foreground": "#272822",
           "leading_diamond": "",
+          "powerline_symbol": "",
+          "style": "diamond",
+          "template": "  {{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#90D743",
+          "foreground": "#272822",
           "powerline_symbol": "",
           "properties": {
             "style": "folder"
           },
-          "style": "diamond",
+          "style": "powerline",
           "template": "  {{ .Path }} ",
-          "trailing_diamond": "",
           "type": "path"
         },
         {
-          "background": "#E6DB74",
+          "background": "#35B779",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FD971F{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#F92672{{ end }}",
-            "{{ if gt .Ahead 0 }}#66D9EF{{ end }}",
+            "{{ if gt .Ahead 0 }}#31688E{{ end }}",
             "{{ if gt .Behind 0 }}#FD971F{{ end }}"
           ],
           "foreground": "#272822",
+          "foreground_templates": [
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#F8F8F2{{ end }}",
+            "{{ if gt .Ahead 0 }}#F8F8F2{{ end }}"
+          ],
           "powerline_symbol": "",
           "properties": {
             "fetch_stash_count": true,
@@ -40,16 +51,16 @@
           "type": "python",
           "style": "powerline",
           "powerline_symbol": "",
-          "foreground": "#272822",
-          "background": "#66D9EF",
+          "foreground": "#F8F8F2",
+          "background": "#21918C",
           "template": "  {{ .Full }} "
         },
         {
-          "background": "#A6E22E",
+          "background": "#31688E",
           "background_templates": [
             "{{ if gt .Code 0 }}#F92672{{ end }}"
           ],
-          "foreground": "#272822",
+          "foreground": "#F8F8F2",
           "foreground_templates": [
             "{{ if gt .Code 0 }}#F8F8F2{{ end }}"
           ],
@@ -64,6 +75,32 @@
         }
       ],
       "type": "prompt"
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "background": "#443983",
+          "foreground": "#F8F8F2",
+          "leading_diamond": "",
+          "powerline_symbol": "",
+          "style": "diamond",
+          "template": "  {{ .Name }} ",
+          "type": "shell"
+        },
+        {
+          "background": "#440154",
+          "foreground": "#F8F8F2",
+          "leading_diamond": "<transparent,background></>",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "template": "  {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "",
+          "type": "time"
+        }
+      ]
     }
   ],
   "final_space": true,
